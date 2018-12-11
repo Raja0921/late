@@ -24,6 +24,17 @@ public class CBOL_Regression_HomePage_Incredibles_Steps {
 		homepageincrediblesactions.selectlanguage(Language);
 	}
 
+	@And("^I login using valid \"([^\"]*)\" and \"([^\"]*)\"$")
+	public void i_login_using_valid_and(String userid, String password)  {
+	homepageincrediblesactions.login(userid, password);
+
+	}
+	
+	@And("^I click on Citi link$")
+	public void if_I_click_on_Citi_link()  {
+	homepageincrediblesactions.Citilink();
+	}
+	
 	@And("^I click Banking menu$")
 	public void i_click_Banking_menu() throws Throwable {
 		homepageincrediblesactions.bankingmenu();

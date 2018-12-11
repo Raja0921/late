@@ -28,7 +28,7 @@ import utils.ConfigFileReader;
         plugin = {"json:target/cucumber1.json", "pretty", "html:target/cucumber.html", "com.cucumber.listener.ExtentCucumberFormatter:./newreport.html"},
         features = "src/test/resources/FeatureFiles",
         glue = "stepDef",
-       tags = {"@HPIBankingIRA"}
+       tags = {"@Accountsnapshot"}
         )
 
 public class SignOnInternetBuildRunner_test  extends AbstractTestNGCucumberTests  {

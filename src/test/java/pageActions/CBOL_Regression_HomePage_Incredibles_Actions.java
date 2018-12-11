@@ -38,16 +38,17 @@ public class CBOL_Regression_HomePage_Incredibles_Actions {
 				}
 			break;
 			case "Spanish" :
-				if(homepageincredibleslocators.English.isDisplayed())
+				if(homepageincredibleslocators.Espanol.isDisplayed())
 				{
-					System.out.println("The Page already in Spanish");
-					
+					System.out.println("The Page is in English");
+					homepageincredibleslocators.Espanol.click();
+					Thread.sleep(9000);
+					System.out.println("Now the Page is in Spanish");
 				}
 				else
 				{
 					homepageincredibleslocators.Espanol.click();
-					Thread.sleep(9000);
-					System.out.println("Now the Page is in Spanish");
+					System.out.println("The Page already in Spanish");
 				}
 			break;	
 		}
@@ -55,16 +56,9 @@ public class CBOL_Regression_HomePage_Incredibles_Actions {
 	}
 	
 	public void bankingmenu() {
-		if(homepageincredibleslocators.EnBanking.isDisplayed()) 
-		{
-				homepageincredibleslocators.EnBanking.click();
-				System.out.println("Banking menu is clicked");
-		}
-		else {
-				homepageincredibleslocators.EsBanking.click();
+
+				homepageincredibleslocators.Banking.click();
 				System.out.println("Banca Personal is clicked");
-			
-		}	
 	}
 
 	public void bankingpage(String Language) throws InterruptedException {
@@ -145,32 +139,103 @@ public class CBOL_Regression_HomePage_Incredibles_Actions {
 					}
 				}
 				break;
-		}
+				}
 	}		
 
 	public void tab(String Tab) throws InterruptedException {
 		switch (Tab) 
 		{
 			case "CD&BankingIRA" :
-				homepageincredibleslocators.CDandIRAtab.click();
-				System.out.print("CD & IRA tab is clicked");
-				Thread.sleep(9000);
-				String url2 = SeleniumDriver.getDriver().getCurrentUrl();
-				if(url2.contains("ID=cd-ira-account-overview"))
-				{
-					System.out.println("CD & Banking IRAs page is verified");
-					System.out.println("CD & Banking IRAs page is displayed");
-				}
-				else
-				{
-					System.out.print("Displayed is not an expected CD & Banking IRAs page");
-				}
+					homepageincredibleslocators.CDandIRAtab.click();
+					System.out.print("CD & IRA tab is clicked");
+					Thread.sleep(9000);
+					String url2 = SeleniumDriver.getDriver().getCurrentUrl();
+					if(url2.contains("ID=cd-ira-account-overview"))
+					{
+						System.out.println("CD & Banking IRAs page is verified");
+						System.out.println("CD & Banking IRAs page is displayed");
+					}
+					else
+					{
+						System.out.print("Displayed is not an expected CD & Banking IRAs page");
+					}
 				
 			break;	
+			
+			case "Saving" :
+				try{
+					homepageincredibleslocators.Savingtab.isDisplayed();	
+					homepageincredibleslocators.Savingtab.click();
+					System.out.print("Saving is clicked");
+					Thread.sleep(4000);
+					String url3 = SeleniumDriver.getDriver().getCurrentUrl();
+					if(url3.contains("ID=savings-account-overview"))
+					{
+						System.out.println("Saving page is verified");
+						System.out.println("Saving page is displayed");
+					}
+					else
+					{
+						System.out.print("Displayed is not an expected Saving page");
+					}
+					}
 				
-		}	
+				catch(Exception e) {
+					homepageincredibleslocators.EsSavingtab.isDisplayed();
+					homepageincredibleslocators.Savingtab.click();
+					System.out.print("Saving is clicked");
+					Thread.sleep(9000);
+					String url3 = SeleniumDriver.getDriver().getCurrentUrl();
+					if(url3.contains("ID=savings-account-overview"))
+					{
+						System.out.println("Saving page is verified");
+						System.out.println("Saving page is displayed");
+					}
+					else
+					{
+						System.out.print("Displayed is not an expected Saving page");
+					}
+					}
 		
-	}
+			break;
+			
+			case "Checking" :
+				try{
+					homepageincredibleslocators.Checkingtab.isDisplayed();
+					homepageincredibleslocators.Checkingtab.click();
+					System.out.print("Checking is clicked");
+					Thread.sleep(9000);
+					String url4 = SeleniumDriver.getDriver().getCurrentUrl();
+					if(url4.contains("ID=checking-account-overview"))
+					{
+						System.out.println("Checking page is verified");
+						System.out.println("Checking page is displayed");
+					}
+					else
+					{
+						System.out.print("Displayed is not an expected Checking page");
+					}
+					}
+		
+				catch (Exception e){
+					homepageincredibleslocators.EsCheckingtab.isDisplayed();
+					homepageincredibleslocators.EsCheckingtab.click();
+					System.out.print("Checking is clicked");
+					Thread.sleep(9000);
+					String url4 = SeleniumDriver.getDriver().getCurrentUrl();
+					if(url4.contains("ID=checking-account-overview"))
+					{
+						System.out.println("Checking page is verified");
+						System.out.println("Checking page is displayed");
+					}
+					else
+					{
+						System.out.print("Displayed is not an expected Checking page");
+					}
+					}
+			break;
+					}
+		}
 
 	public void module(String Package) throws InterruptedException {
 		switch (Package) 
@@ -202,10 +267,123 @@ public class CBOL_Regression_HomePage_Incredibles_Actions {
 			System.out.println("Breadcrumb navigation is verified");
 			
 		break;
-	}
+		
+		case "EsCitiSavingsAccount":
+			homepageincredibleslocators.EsCitisavingmodule.isDisplayed();
+			System.out.println("Saving module is displayed");
+			homepageincredibleslocators.EsCitiSavingSeeDetails.click();
+			Thread.sleep(9000);
+			homepageincredibleslocators.EsCitisavingpage1.isDisplayed();
+			homepageincredibleslocators.EsCitisavingpage2.isDisplayed();
+			System.out.println("Saving page is displayed in spanish");
+			homepageincredibleslocators.Breadcrumb.isDisplayed();
+			homepageincredibleslocators.Esbreadcrumbhome.click();
+			System.out.println("Breadcrumb navigation is verified");
+			
+		break;
+		
+		case "EsCitiPriority":
+			homepageincredibleslocators.EsCitiprioritymodule.isDisplayed();
+			System.out.println("Citi Priority module is displayed");
+			homepageincredibleslocators.EsCitiprioritySeeDetails.click();
+			Thread.sleep(9000);
+			homepageincredibleslocators.EsCitiprioritypage1.isDisplayed();
+			homepageincredibleslocators.EsCitiprioritypage2.isDisplayed();
+			System.out.println("Citi Priority page is displayed in spanish");
+			homepageincredibleslocators.Breadcrumb.isDisplayed();
+			homepageincredibleslocators.Esbreadcrumbhome.click();
+			System.out.println("Breadcrumb navigation is verified");
+			
+		break;
+		
+		case "CitiGold":
+			homepageincredibleslocators.Citigoldmodule.isDisplayed();
+			System.out.println("Citi Gold module is displayed");
+			homepageincredibleslocators.CitiGoldSeeDetails.click();
+			Thread.sleep(9000);
+			homepageincredibleslocators.Citigoldpage1.isDisplayed();
+			homepageincredibleslocators.Citigoldpage2.isDisplayed();
+			System.out.println("Citi Priority page is displayed in English");
+			homepageincredibleslocators.Breadcrumb.isDisplayed();
+			homepageincredibleslocators.breadcrumbhome.click();
+			System.out.println("Breadcrumb navigation is verified");
+			
+		break;
+		
+		case "CitiBank":
+			homepageincredibleslocators.Citibankmodule.isDisplayed();
+			System.out.println("Citi Bank module is displayed");
+			homepageincredibleslocators.CitibankSeeDetails.click();
+			Thread.sleep(9000);
+			homepageincredibleslocators.Citibankpage1.isDisplayed();
+			homepageincredibleslocators.Citibankpage2.isDisplayed();
+			System.out.println("Citi Bank page is displayed in English");
+			homepageincredibleslocators.Breadcrumb.isDisplayed();
+			homepageincredibleslocators.breadcrumbhome.click();
+			System.out.println("Breadcrumb navigation is verified");
+			
+		break;
+		
+		case "AccessAccount":
+			homepageincredibleslocators.AccessAccountmodule.isDisplayed();
+			System.out.println("Access Account module is displayed");
+			homepageincredibleslocators.AccessSeeDetails.click();
+			Thread.sleep(9000);
+			homepageincredibleslocators.Accessaccountpage1.isDisplayed();
+			homepageincredibleslocators.Accessaccountpage2.isDisplayed();
+			System.out.println("Access Account page is displayed in English");
+			homepageincredibleslocators.Breadcrumb.isDisplayed();
+			homepageincredibleslocators.breadcrumbhome.click();
+			System.out.println("Breadcrumb navigation is verified");
+			
+		break;
+		
+		case "CitiPriority":
+			homepageincredibleslocators.Citiprioritymodule.isDisplayed();
+			System.out.println("Citi Priority module is displayed");
+			homepageincredibleslocators.CitiprioritySeeDetails.click();
+			Thread.sleep(9000);
+			homepageincredibleslocators.Citiprioritypage1.isDisplayed();
+			homepageincredibleslocators.Citiprioritypage2.isDisplayed();
+			System.out.println("Citi Priority page is displayed in English");
+			homepageincredibleslocators.Breadcrumb.isDisplayed();
+			homepageincredibleslocators.breadcrumbhome.click();
+			System.out.println("Breadcrumb navigation is verified");
+			
+		break;
+		
+		case "BasicBanking":
+			homepageincredibleslocators.BasicBankingmodule.isDisplayed();
+			System.out.println("Basic Banking module is displayed");
+			homepageincredibleslocators.BasicBankingSeeDetails.click();
+			Thread.sleep(9000);
+			homepageincredibleslocators.Basicbankingpage1.isDisplayed();
+			homepageincredibleslocators.Basicbankingpage2.isDisplayed();
+			System.out.println("Basic Banking page is displayed in English");
+			homepageincredibleslocators.Breadcrumb.isDisplayed();
+			homepageincredibleslocators.breadcrumbhome.click();
+			System.out.println("Breadcrumb navigation is verified");
+			
+		break;
+		}
+		}
+	public void login(String userid, String password) {
 
-	}
+        homepageincredibleslocators.useridmasked.click();
+        homepageincredibleslocators.username.sendKeys(userid);
+        homepageincredibleslocators.password.sendKeys(password);
+        System.out.println("Userid and password are Entered");
+        homepageincredibleslocators.signon.click();
+        System.out.println("Sign on button is clicked");
+        homepageincredibleslocators.accountoverview.isDisplayed();
+        System.out.println("Account summary page is displayed");
 
+		}
+	public void Citilink() {
+		homepageincredibleslocators.citilink.click();
+		System.out.println("Got redirected to home page");
+		}
+	
 
 
 }

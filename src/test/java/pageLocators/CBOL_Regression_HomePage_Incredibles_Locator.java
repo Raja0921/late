@@ -10,12 +10,9 @@ public class CBOL_Regression_HomePage_Incredibles_Locator {
 	
 	@FindBy(xpath="(//a[contains(text(),'English')])")
 	public WebElement English;
-	
-	@FindBy(xpath="(//a[contains(text(),'Banking')])[1]")
-	public WebElement EnBanking;
-	
-	@FindBy(xpath="(//a[contains(text(),'Banca Personal')])[1]")
-	public WebElement EsBanking;
+
+	@FindBy(id="banking")
+	public WebElement Banking;
 	
 	@FindBy(xpath="(//ul[@class='breadcrumb'])")
 	public WebElement Breadcrumb;
@@ -42,19 +39,28 @@ public class CBOL_Regression_HomePage_Incredibles_Locator {
 	public WebElement CheckingTitle;
 	
 	@FindBy(xpath="(//span[contains(text(),'Checking')])")
-	public WebElement Checkingtab;   
-	
+	public WebElement Checkingtab; 
+    
+    @FindBy(xpath="(//span[contains(text(),'Cuenta de Cheques')])")
+	public WebElement EsCheckingtab;
+  
 	@FindBy(xpath="(//span[contains(text(),'CDs & Banking IRAs')])")
 	public WebElement CDandIRAtab;
 	
 	@FindBy(xpath="(//span[contains(text(),'Savings')])")
 	public WebElement Savingtab;
 	
+	@FindBy(xpath="(//span[contains(text(),'Ahorros')])")
+	public WebElement EsSavingtab;
+
 	@FindBy(xpath="(//a[contains(text(),'See Details')])[1]")
 	public WebElement CitiGoldSeeDetails;
 	
 	@FindBy(xpath="(//a[contains(text(),'See Details')])[2]")
 	public WebElement CitiprioritySeeDetails;
+	
+	@FindBy(xpath="(//a[contains(text(),'Ver Detalles')])[2]")
+	public WebElement EsCitiprioritySeeDetails;
 	
 	@FindBy(xpath="(//a[contains(text(),'See Details')])[3]")
 	public WebElement CitibankSeeDetails;
@@ -68,6 +74,9 @@ public class CBOL_Regression_HomePage_Incredibles_Locator {
 	@FindBy(xpath="(//a[contains(text(),'See Details')])[6]")
 	public WebElement CitiSavingSeeDetails;
 	
+	@FindBy(xpath="(//a[contains(text(),'Ver Detalles')])[6]")
+	public WebElement EsCitiSavingSeeDetails;
+	
 	@FindBy(xpath="(//a[contains(text(),'See Details')])[7]")
 	public WebElement CDSeeDetails;
 	
@@ -80,6 +89,9 @@ public class CBOL_Regression_HomePage_Incredibles_Locator {
 	@FindBy(xpath="(//p[contains(text(),'Citi Priority Package')])")
 	public WebElement Citiprioritymodule;
 	
+	@FindBy(xpath="(//p[contains(text(),'Paquete Citi Priority')])")
+	public WebElement EsCitiprioritymodule;
+	
 	@FindBy(xpath="((//p[contains(text(),'Citigold')])[1]")
 	public WebElement Citigoldmodule;
 	
@@ -91,6 +103,9 @@ public class CBOL_Regression_HomePage_Incredibles_Locator {
 	
 	@FindBy(xpath="(//h3[contains(text(),'Saving Made Simple')])")
 	public WebElement Citisavingmodule;
+	
+	@FindBy(xpath="(//h3[contains(text(),'Ahorrar es fácil')])")
+	public WebElement EsCitisavingmodule;
 	
 	@FindBy(xpath="(//p[contains(text(),'Certificates of Deposit (CDs)')])")
 	public WebElement CDmodule;
@@ -105,10 +120,16 @@ public class CBOL_Regression_HomePage_Incredibles_Locator {
 	public WebElement Citigoldpage2;
 	
 	@FindBy(xpath="(//h2[contains(text(),'Priority Banking with Dedicated Support')])")
-	public WebElement Citiprioritypage1;
+	public WebElement Citiprioritypage1;  
+	
+	@FindBy(xpath="(//h2[contains(text(),'Servicios Bancarios Prioritarios con Apoyo Especializado')])")
+	public WebElement EsCitiprioritypage1;
 	
 	@FindBy(xpath="(//h2[contains(text(),'Citi Priority Details')])")
 	public WebElement Citiprioritypage2;
+	
+	@FindBy(xpath="(//h2[contains(text(),'Detalles de Citi Priority')])")
+	public WebElement EsCitiprioritypage2;
 	
 	@FindBy(xpath="(//h2[contains(text(),'Full-Feature Relationship Checking')])")
 	public WebElement Citibankpage1;
@@ -128,11 +149,11 @@ public class CBOL_Regression_HomePage_Incredibles_Locator {
 	@FindBy(xpath="(//h2[contains(text(),'Access Account Details')])")
 	public WebElement Accessaccountpage2;
 	
-	@FindBy(xpath="(//h2[contains(text(),'Saving Made Simple')])")
-	public WebElement Citisavingpage1;
+	@FindBy(xpath="(//h2[contains(text(),'Ahorrar es Fácil')])")
+	public WebElement EsCitisavingpage1;
 	
-	@FindBy(xpath="(//h2[contains(text(),'Citi Savings Details')])")
-	public WebElement Citisavingpage2;
+	@FindBy(xpath="(//h2[contains(text(),'Detalles de la Cuenta de Ahorros Citi')])")
+	public WebElement EsCitisavingpage2;
 	
 	@FindBy(xpath="(//h1[contains(text(),'Certificates of Deposit')])")
 	public WebElement CDpage1;
@@ -149,8 +170,28 @@ public class CBOL_Regression_HomePage_Incredibles_Locator {
 	@FindBy(xpath="(//ul[@class='breadcrumb']//a[contains(text(),'Home')])")
 	public WebElement breadcrumbhome;
 	
+	@FindBy(xpath="(//ul[@class='breadcrumb']//a[contains(text(),'Inicio')])")
+	public WebElement Esbreadcrumbhome;
 	
+	@FindBy(id="usernameMasked")
+	public WebElement useridmasked; 
+
+    @FindBy(id="username")
+    public WebElement username;
+
+    @FindBy(id="password")
+    public WebElement password;
+
+    @FindBy(id="signInBtn")
+    public WebElement signon;
+
+    @FindBy(id="topNavAccounts")
+    public WebElement accountoverview;
+
+    @FindBy(xpath="(//a[contains(text(),'citi.com')])[1]")
+    public WebElement citilink;
 	
+    
 	
 			 
 	

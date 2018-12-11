@@ -39,8 +39,8 @@ public class SeleniumDriver {
     
     //initialize timeouts
     private static WebDriverWait waitDriver;
-    public final static int TIMEOUT = 60;
-    public final static int PAGE_LOAD_TIMEOUT = 60;
+    public final static int TIMEOUT = 150;
+    public final static int PAGE_LOAD_TIMEOUT = 150;
     ConfigFileReader configFileReader;
     String tmpDriverPath;
     String tmpDriverUnxPath;
